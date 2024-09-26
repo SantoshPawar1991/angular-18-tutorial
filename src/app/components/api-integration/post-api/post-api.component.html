@@ -1,0 +1,108 @@
+<app-alert
+  [message]="'Hello , from post component'"
+  [alertType]="'Success'"
+></app-alert>
+<!-- <app-alert
+  [message]="'Hello , from post component'"
+  [alertType]="'Error'"
+></app-alert> -->
+<!-- <app-my-button
+  [btnClass]="'btn btn-success'"
+  [btnText]="'Save Records'"
+></app-my-button> -->
+<div class="container">
+  <div class="row bg-success rounded mt-2 p-4 text-white h2">
+    Post API
+    <h4>Create Department , Department list</h4>
+  </div>
+  <div class="row">
+    <div class="card col-8 col-4 pb-2 pt-2">
+      <div class="card-header fw-bold">Department</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">sr no</th>
+              <th scope="col">Name</th>
+              <th scope="col">Logo</th>
+              <th scope="col">Edit Record</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of deptArr; track $index) {
+            <tr>
+              <td>{{ $index + 1 }}</td>
+              <td>{{ item.departmentName }}</td>
+              <td>{{ item.departmentLogo }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="onEdit(item)">
+                  Edit
+                </button>
+                <button
+                  class="btn btn-danger m-1"
+                  (click)="onDelete(item.departmentId)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card col-4 pb-2 pt-2">
+      <div class="card-header bold fw-bold">New Department</div>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Department Name</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter Department Name"
+            [(ngModel)]="departmentObj.departmentName"
+            name="departmentName"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Department Logo</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter department logo"
+            [(ngModel)]="departmentObj.departmentLogo"
+            name="departmentLogo"
+          />
+        </div>
+
+        @if (departmentObj.departmentId==0) {
+        <button
+          type="submit"
+          class="btn btn-primary float-end"
+          (click)="onSave()"
+        >
+          Save
+        </button>
+
+        }@else {
+        <button
+          type="submit"
+          class="btn btn-warning float-end"
+          (click)="onUpdateDepartment()"
+        >
+          Update
+        </button>
+        }
+
+        <!-- <p>{{ departmentObj | json }}</p> -->
+      </form>
+    </div>
+  </div>
+</div>

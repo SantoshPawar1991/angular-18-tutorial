@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr.no</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>
+          <th>Gender</th>
+          <th>Total Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of studentList; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ item.studentId }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            <span>{{ item.isActive ? "Active" : "De-Active" }}</span>
+          </td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.marks }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

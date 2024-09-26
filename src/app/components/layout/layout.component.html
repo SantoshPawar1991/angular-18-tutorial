@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-black text-white">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+            <a class="nav-link active" routerLink="add-employee">Add Employee</a>
+          </li> -->
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="data-binding"
+            >Data Binding</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" class="nav-link text-white" routerLink="emp-list"
+            >Employee List</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="struc-dir"
+            >Strucral Direc</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="pipe">Pipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="for-statement">ForState</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="pipe">Pipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="template">Template</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="reactive">Reactive</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="signals">Signals</a>
+        </li>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Api Integration
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" routerLink="get-api">Get-api</a></li>
+            <li><a class="dropdown-item" routerLink="post-api">Post-Api</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="ng-template">Ng Template</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ng-container"
+                >Ng Container</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="viewchild">Viewchild</a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+    <form class="d-flex">
+      <!-- <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      /> -->
+      <select name="" id="">
+        <option value="Select">Select Role</option>
+        <option value="user">User Role</option>
+        <option value="guest">Guest Role</option>
+      </select>
+
+      <span class="text-white">{{ loggedUserData.userName }}</span>
+      <button
+        class="btn btn-outline-success text-white"
+        type="button"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

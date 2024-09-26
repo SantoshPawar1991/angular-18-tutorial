@@ -1,0 +1,22 @@
+<app-alert
+  [message]="'Hello , from get component'"
+  [alertType]="'Warning'"
+></app-alert>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <select name="" id="">
+        @for (item of usersList; track $index) {
+        <option value="">{{ item.name }}</option>
+        }
+      </select>
+    </div>
+    <div class="col-4">
+      <select name="" id="">
+        @for (item of toDos; track $index) {
+        <option>{{ item.title }}</option>
+        }
+      </select>
+    </div>
+  </div>
+</div>

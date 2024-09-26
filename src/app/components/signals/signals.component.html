@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row bg-secondary rounded p-4 m-2 text-white">
+    <h3>Signals</h3>
+    <p>Create , Update and Display</p>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      {{ courseName() }}
+    </div>
+    <div class="col-3">
+      {{ technology }}
+    </div>
+    <div class="col-3">fullName - {{ fullname() }}</div>
+
+    <div class="col-3">
+      {{ cityList() }}
+    </div>
+  </div>
+  <div class="row">
+    <!-- <button class="btn btn-primary" (click)="changeName()">Change Name</button> -->
+
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="changeFirstName()">
+        Change FirstName
+      </button>
+      <button class="btn btn-warning m-2" (click)="changeLastName()">
+        Change LastName
+      </button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-success m-2" (click)="addCity()">Add City</button>
+    </div>
+  </div>
+</div>

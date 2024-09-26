@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row bg-secondary rounded mt-2 p-4 text-white h2">Pipes</div>
+  <div class="row">
+    <div class="col-3 border">
+      <p>Before pipe : - {{ courseName }}</p>
+
+      <p>After Pipe : - {{ courseName | uppercase }}</p>
+    </div>
+    <div class="col-3 border">
+      <p>Before pipe : - {{ courseName }}</p>
+
+      <p>After Pipe : - {{ courseName | lowercase }}</p>
+    </div>
+    <div class="col-3 border">
+      <p>Before pipe : - {{ generalStatement }}</p>
+
+      <p>After Pipe : - {{ generalStatement | titlecase }}</p>
+    </div>
+    <div class="col-3 border">
+      <p>Before pipe : - {{ currentDate }}</p>
+
+      <p>After Pipe : - {{ currentDate | date : "dd/MMM/yyyy" }}</p>
+    </div>
+    <div class="col-3 border">
+      <p>Before pipe : - {{ student }}</p>
+      <p>After Pipe : - {{ student | json }}</p>
+    </div>
+
+    <div class="col-3 border">
+      <p>Before pipe : - {{ student }}</p>
+      <p>After Pipe : - {{ student.state | na }}</p>
+    </div>
+  </div>
+</div>

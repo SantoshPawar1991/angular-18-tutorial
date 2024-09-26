@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="div-1" *ngIf="isShowAndHideDiv">
+                <h1>Div -1 </h1>
+            </div>
+            <button class="btn btn-success" (click)="hideDiv()">Hide</button>
+            <button class="btn btn-primary m-1" (click)="showDiv() ">Show</button>
+        </div>
+        <div class="col-3">
+            <div class="div-2" *ngIf="isToggleDiv">
+                <h1>Div-2</h1>
+            </div>
+            <button class="btn btn-success m-1" (click)="showAndHideDiv()">Toggle</button>
+        </div>
+        <div class="col-3">
+            <div class="div-3" *ngIf="num1 == num2">
+                <h1>Div - 3 </h1>
+            </div>
+            <input type="text" placeholder="Num1" [(ngModel)]="num1">
+            <input type="text" placeholder="Num2" [(ngModel)]="num2">
+        </div>
+        <div class="col-3">
+            <div class="div-4" *ngIf="isActive">
+                <h1>Div -4</h1>
+            </div>
+            <input type="checkbox" [(ngModel)]='isActive'>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                <li *ngFor="let cities of citiesArray">
+                    {{cities}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <div *ngFor="let citi of citiesArray">{{citi}}</div>
+        </div>
+        <div class="col-3">
+            <select name="" id="">
+                <option value="" *ngFor="let city of citiesArray">{{city}}</option>
+            </select>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+
+    <hr>
+
+
+
+
+
+</div>

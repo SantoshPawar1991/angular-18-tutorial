@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-3">
+      @if (div1Visible) {
+      <div class="div-1">
+        <h1>Div -1</h1>
+      </div>
+      }
+    </div>
+    <div class="col-3">
+      @if(isWarningDiv2){
+      <div class="div-2 bg-success">
+        <h1>Div-2 Success</h1>
+      </div>
+      }@else {
+      <div class="div-2 bg-warning">
+        <h1>Div-2 Warn</h1>
+      </div>
+      }
+    </div>
+    <div class="col-3">
+      @if(num1 == num2){
+      <div class="div-3">
+        <h1>Div - 3</h1>
+      </div>
+      }
+    </div>
+    <div class="col-3">
+      <div class="div-4">
+        @if (selectedStatus == 'active') {
+        <p>Student is Active</p>
+        }@else if (selectedStatus == 'de-Active') {
+        <p>Status is De-Active</p>
+        }@else if (selectedStatus == 'pending') {
+        <p>Status is Pending</p>
+        }@else {
+        <p>Please Select Status</p>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 text-center">
+      <button class="btn btn-success" (click)="hideDiv()">Hide</button>
+      <button class="btn btn-primary m-1" (click)="showDiv()">Show</button>
+    </div>
+    <div class="col-3 text-center">
+      <button class="btn btn-success m-1" (click)="showAndHideDiv()">
+        Toggle
+      </button>
+    </div>
+    <div class="col-3">
+      <input type="text" placeholder="Num1" [(ngModel)]="num1" />
+      <input type="text" placeholder="Num2" [(ngModel)]="num2" />
+    </div>
+    <div class="col-3">
+      <select name="" id="" [(ngModel)]="selectedStatus">
+        <option value="">Select Status</option>
+        <option value="active">Active</option>
+        <option value="de-Active">De-Active</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+  </div>
+</div>
